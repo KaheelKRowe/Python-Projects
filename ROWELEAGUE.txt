@@ -5,6 +5,11 @@ each team will start with 12 players that have their own randomized names and ag
 
 -- This will be for a separate game mode, currently working on GM mode --
 Once the player starts the game they will be prompted to enter a first and last name, height, position, weight, jersey number, and choose a player archetype.
+
+After each win and loss the player will recieve coins that can be used to upgrade their team.
+this will encourage the player to stay with their drafted team instead of requesting a trade or leaving in free agency.
+
+The player's objective is to try to make the hall of fame, they will do this by accumulating LEGEND POINTS by winning league awards and championships.
 -------------------------------------------------------------------------
 
 Games will be decided based on overall, the higher a team's overall the better chance they will have at winning a game.
@@ -37,13 +42,10 @@ F						F
 *Note, may change playoffs to be instead be based around overall league standing so that the 1 and 2 seed of the league will
 get a free round and allow the truly bad teams at a chance to get young talent.
 
-After each win and loss the player will recieve coins that can be used to upgrade their team.
-this will encourage the player to stay with their drafted team instead of requesting a trade or leaving in free agency.
-
 teams will be able to cut and trade players based off their needs.
 
 Players who are ages 36-39 have a chance to retire, once a player reaches age 40 they are gauranteed to retire.
 
 players will improve yearly based off their age, ages 26-31 are the prime years of a player, after those years the players will begin to regress due to age. 
 
-The player's objective is to try to make the hall of fame, they will do this by accumulating LEGEND POINTS by winning league awards and championships.
+The player's objective is to try to build a dynasty and win as many championships with their team.
