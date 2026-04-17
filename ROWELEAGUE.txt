@@ -14,7 +14,7 @@ The player's objective is to try to make the hall of fame, they will do this by 
 
 Games will be decided based on overall, the higher a team's overall the better chance they will have at winning a game.
 
-60 games, 32 away, 32 home. Teams will play other teams from the opposing conference twice per season, 24 games total for opposing conference games, a team will play other teams within its own conference 3 time per season accounting for 33 games,
+60 games, 30 away, 30 home. Teams will play other teams from the opposing conference twice per season, 24 games total for opposing conference games, a team will play other teams within its own conference 3 time per season accounting for 33 games,
 the remaining 3 games will be played against the team's division rivals.
 
 Playoffs will mostly be based off nba's playoff system.
