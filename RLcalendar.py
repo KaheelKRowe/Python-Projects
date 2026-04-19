@@ -13,9 +13,11 @@ class Calendar:
         self.free_agency_start = date(self.season_end_year, 7, 10)
         self.season_end = date(self.season_end_year, 10, 21)
 
+    # Displays the current date of the game.
     def display_date(self):
         print(f"{self.current_date.strftime('%B %d, %Y')} | {self.phase}")
-
+    
+    # Advances the day of the game and updates the phase of the game.
     def advance_day(self):
         self.current_date += timedelta(days=1)
         if self.current_date >= self.trade_deadline and self.phase == "Regular Season":
@@ -32,7 +34,8 @@ class Calendar:
             self.current_date = date(self.season_start_year, 10, 22)
             self.phase = "Regular Season"
             self.new_season()
-        
+
+    # Sets the importants dates for the start of the next season.    
     def new_season(self):
         self.trade_deadline = date(self.season_end_year, 1, 15)
         self.playoffs_start = date(self.season_end_year, 3, 1)
