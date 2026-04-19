@@ -20,6 +20,7 @@ def display_teams(league):
         else:
             print(f"Invalid choice. Please enter a valid Team ID or Name.")
 
+# Displays a table of players in the league, used for displaying free agents.
 def print_player_table(players):
     print(f"\n{'Player ID':<10} {'Name':<22} {'Position':<15} {'Age':<15} {'OVR':<10} {'Pot':<10}")
     print("-" * 80)
@@ -27,7 +28,7 @@ def print_player_table(players):
         name = f"{player.player_first} {player.player_last}"
         print(f"{player.player_id:<10} | {name:<20} | {player.position:<10} | Age: {player.age:<10} | OVR: {player.overall:<10} | Pot: {player.get_potential_grade():<10}")
 
-# Displays a list of free agents in the league.
+# Displays a list of free agents in the league, comes with several sort options.
 def display_free_agents(league):
     league.free_agents.sort(key=lambda p: p.overall, reverse=True)
     print_player_table(league.free_agents)
@@ -87,6 +88,7 @@ def display_free_agents(league):
         else:
             print("Invalid choice. Please enter a valid choice")
 
+# Allows the user to sign a free agents, has checks to prevent user from signing players they don't have roster space for and/or cap space.
 def sign_free_agent(league):
     while True:
         agent_choice = input("\nEnter a Player ID to sign: ")
@@ -107,7 +109,33 @@ def sign_free_agent(league):
         if not found:
             print("Player ID invalid. Please try again.")
 
+# Runs the free agency week over the offseason, letting the user compete with the cpu for free agents.   
+def free_agency_day(league):
+    choice = None
+    while choice != '4':
+        league.calendar.display_date()
+        print("\nFree Agency Week")
+        print("1. View Free Agents")
+        print("2. Sign Free Agents")
+        print("3. Advance Day")
+        print("4. Exit")
+        choice = input("Enter your choice: ")
+        if choice == '1':
+            display_free_agents(league)
+        elif choice == '2':
+            sign_free_agent(league)
+        elif choice == '3':
+            league.cpu_free_agency_day()
+            league.calendar.advance_day()
+            if league.calendar.phase != "Free Agency":
+                print(f"\nFree Agency has ended!")
+                return
+        elif choice == '4':
+            return
+        else:
+            print("Invalid choice. Please enter a valid choice")
 
+# Displays the main menu.
 def main_menu(league):
     choice = None
     while choice != '6':
@@ -127,7 +155,7 @@ def main_menu(league):
             confirm = input("\nWould you like to sign a free agent(s)? (y/n): ")
             if confirm.lower() == 'y':
                 if league.calendar.phase == "Free Agency":
-                    print("\nYou must be in the Free Agency phase to sign free agents.")
+                    free_agency_day(league)
                 else:
                     sign_free_agent(league)
         elif choice == '3':
